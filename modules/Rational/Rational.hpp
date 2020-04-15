@@ -1,14 +1,12 @@
 #pragma once
 
-#include <algorithm>
+#include <cmath>
 #include <cassert>
 #include <iostream>
 
 // change it
 template <typename Int>
 Int gcd(Int a, Int b) {
-    a = std::abs(a);
-    b = std::abs(b);
     if (b == 0) {
         return a;
     }
@@ -17,13 +15,13 @@ Int gcd(Int a, Int b) {
 
 
 namespace emath {
-    template <typename Int, typename UInt>
+    template <typename Int>
     class Rational {
     public:
         Int num;
-        UInt den;
+        Int den;
  
-        Rational(Int num_, UInt _den): num(num_), den(_den) {
+        Rational(Int num_, Int _den): num(num_), den(_den) {
             reduce();
         }
 
@@ -68,8 +66,8 @@ namespace emath {
         }
 
         Rational operator*(Rational const& right) {
-            UInt gcdad = gcd(num, right.den);
-            UInt gcdbc = gcd(den, right.num);
+            Int gcdad = gcd(num, right.den);
+            Int gcdbc = gcd(den, right.num);
             return Rational((num / gcdad) * (right.num / gcdbc), (right.den / gcdad) * (den / gcdbc));
         }
 
@@ -80,14 +78,18 @@ namespace emath {
 
     private:
         void reduce() {
-            UInt g = gcd(num, den);
+            if (den < 0) {
+                den *= -1;
+                num *= -1;
+            }
+            Int g = gcd(num, den);
             num /= g;
             den /= g;        
         }
     };
 
-    template <typename Int, typename UInt>
-    std::ostream& operator<<(std::ostream& out, Rational<Int, UInt> const& r) {
+    template <typename Int>
+    std::ostream& operator<<(std::ostream& out, Rational<Int> const& r) {
         return out << '(' <<  r.num << ',' << r.den << ')';
     }
 }
