@@ -27,3 +27,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.plus-one-input-number {
+  width: 100%;
+}
