@@ -49,25 +49,6 @@ int* MUL_ND_N(int* a1, int size_a, int b)
 			c[i] = c[i] % 10;
 		}
 	}
-
-	int k = 0;
-	if (c[0] == 0)//сдвиг, чтобы старший разряд оказался в 0 ячейке массива 
-	{
-		for (int i = 0; i < flenght; i++)
-		{
-			c[i] = c[i+1];
-		}
-		k = k + 1;
-		c[flenght - k] = -1;
-	}
-
-	//удаление лишних элементов в массиве int
-	int* c_f = new int[flenght - k];
-	for (int i = 0; (c[i] > -1) && (i < flenght - k) ; i++)
-	{
-		c_f[i] = c[i];
-	}
+	return c;
 	delete[] c;
-	return c_f;
-	delete[] c_f;
 }
