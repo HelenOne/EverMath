@@ -18,42 +18,6 @@ int ilenght(int b)
 
 int* MUL_ND_N(int* a1, int size_a, int b)
 {
-	setlocale(LC_ALL, "RUS");
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-	//Ввод длинного числа как массив символов пользователем
-	/*int size_a;
-	wcout << L"Введите количество разрядов длинного числа" << '\n';
-	cin >> size_a;
-	char* a0 = new char[size_a + 1];
-	wcout << L"Введите длинное число" << '\n';
-	cin >> a0;
-
-	//перевод в массив int
-	int* a1 = new int[size_a];
-	for (int i = 0; i < size_a; i++)
-	{
-		a1[i] = static_cast<int>(a0[i]) - 48;
-	}
-	delete[] a0;*/
-
-	//Ввод как массива int польозвателем
-	/*int size_a;
-	wcout << L"Введите количество разрядов длинного числа" << '\n';
-	cin >> size_a;
-	int* a1 = new int[size_a];
-	cout << "Введите длинное число" << '\n';
-	for (int i = 0; i < size_a; i++)
-	{
-		a1[i] = _getch() - 48;
-		cout << a1[i];
-	}
-	cout << '\n';*/
-
-	/*int b;
-	wcout << L"Введите число, на которое нужно умножить" << '\n';
-	cin >> b;*/
-
 	//длина числа b
 	int size_b = ilenght (b);
 
@@ -97,22 +61,6 @@ int* MUL_ND_N(int* a1, int size_a, int b)
 		c[flenght - k] = -1;
 	}
 
-	//перевод в массив символов c удалением лишних элементов
-	//char* c_f = new char[flenght - k + 1];
-	//for (int i = 0; (c[i] > -1) && (i < flenght - k); i++)
-	//{
-	//	c_f[i] = c[i] + 48;
-	//	c_f[i + 1] = 0;
-	//}
-	//
-	////Вывод массива char
-	//for (int i = 0; c_f[i] != '\0'; i++)
-	//{
-	//	cout << c_f[i];
-	//}
-	//cout << '\n';
-	//delete[] c_f;
-
 	//удаление лишних элементов в массиве int
 	int* c_f = new int[flenght - k];
 	for (int i = 0; (c[i] > -1) && (i < flenght - k) ; i++)
@@ -122,11 +70,4 @@ int* MUL_ND_N(int* a1, int size_a, int b)
 	delete[] c;
 	return c_f;
 	delete[] c_f;
-
-	//Вывод как массив int
-	/*for (int i = 0; i < flenght - k; i++)
-	{
-		cout << c_f[i];
-	}
-	delete[] c_f;*/
 }
