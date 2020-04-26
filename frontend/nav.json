@@ -1,0 +1,118 @@
+[
+  {
+    "label": "Натуральные числа",
+    "items": [
+      {
+        "label": "Прибавление 1",
+        "path": "/naturals/plus_one"
+      },
+      {
+        "label": "Сложение",
+        "path": "/naturals/sum"
+      },
+      {
+        "label": "Вычитание",
+        "path": "/naturals/subtraction"
+      },
+      {
+        "label": "Произведение",
+        "path": "/naturals/multiplication"
+      },
+      {
+        "label": "Деление",
+        "path": "/naturals/division"
+      },
+      {
+        "label": "НОД",
+        "path": "/naturals/gcd"
+      },
+      {
+        "label": "НОК",
+        "path": "/naturals/lcm"
+      }
+    ]
+  },
+  {
+    "label": "Целые числа",
+    "items": [
+      {
+        "label": "Сложение",
+        "path": "/integers/sum"
+      },
+      {
+        "label": "Вычитание",
+        "path": "/integers/subtraction"
+      },
+      {
+        "label": "Умножение",
+        "path": "/integers/multiplication"
+      },
+      {
+        "label": "Целая часть от деления",
+        "path": "/integers/div"
+      },
+      {
+        "label": "Остаток от деления",
+        "path": "/integers/mod"
+      }
+    ]
+  },
+  {
+    "label": "Рациональные числа",
+    "items": [
+      {
+        "label": "Сложение",
+        "path": "/rationals/sum"
+      },
+      {
+        "label": "Вычитание",
+        "path": "/rationals/subtraction"
+      },
+      {
+        "label": "Умножение",
+        "path": "/rationals/multiplication"
+      },
+      {
+        "label": "Деление",
+        "path": "/rationals/division"
+      }
+    ]
+  },
+  {
+    "label": "Многочлены",
+    "items": [
+      {
+        "label": "Сложение",
+        "path": "/polynomials/sum"
+      },
+      {
+        "label": "Вычитание",
+        "path": "/polynomials/subtraction"
+      },
+      {
+        "label": "Умножение",
+        "path": "/polynomials/multiplication"
+      },
+      {
+        "label": "Вынесение НОК знаменателя",
+        "path": "/polynomials/lcm"
+      },
+      {
+        "label": "НОД",
+        "path": "/polynomials/gcd"
+      },
+      {
+        "label": "Выделение целой части",
+        "path": "/polynomials/div"
+      },
+      {
+        "label": "Остаток от деления",
+        "path": "/polynomials/mod"
+      },
+      {
+        "label": "Преобразование - кратные корни в простые",
+        "path": "/polynomials/transformation"
+      }
+    ]
+  }
+]
