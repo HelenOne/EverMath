@@ -1,5 +1,5 @@
 // Pak, Module Z-2
-int POZ_Z_D(char* arr_num[], int size_n, int b) {
+int POZ_Z_D(int* arr_num, int size_n, int b) {
     if (arr_num[0] == 0) {
         return 0;
     }
