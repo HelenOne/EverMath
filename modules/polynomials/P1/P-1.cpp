@@ -1,12 +1,9 @@
-﻿
-
-#include <iostream>
+﻿#include <iostream>
 #include <algorithm>
-
 
 using namespace std;
 
-int* ADD_PP_P(int size1, int* p1, int size2, int* p2) // сложение многочленов
+int *ADD_PP_P(int size1, int *p1, int size2, int *p2) // сложение многочленов
 {
     if (size1 >= size2)
     {
@@ -16,7 +13,7 @@ int* ADD_PP_P(int size1, int* p1, int size2, int* p2) // сложение мно
         }
         return p1;
     }
-    else 
+    else
     {
         for (int i = 0; i < size1; ++i)
         {
@@ -25,7 +22,3 @@ int* ADD_PP_P(int size1, int* p1, int size2, int* p2) // сложение мно
         return p2;
     }
 }
-
-
-
-
