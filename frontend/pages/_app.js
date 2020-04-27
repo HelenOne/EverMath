@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
 
       <div className="content">
         <Card
-          style={{ width: 300 }}
+          style={{ minWidth: 300 }}
           title={
             router.pathname in pagesInfo && pagesInfo[router.pathname].label
           }
