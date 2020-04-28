@@ -19,6 +19,7 @@ export const sumNaturals = (a: string, b: string) => {
 
   for (let i = aArr.length - 1; i >= 0; i--) {
     let currentNumber = aArr[i] + bArr[i] + buffer;
+    buffer = 0;
     if (currentNumber > 9) {
       result.unshift(currentNumber % 10);
       buffer = Math.floor((currentNumber - (currentNumber % 10)) / 10);
