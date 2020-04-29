@@ -32,13 +32,8 @@ export const subtractNaturals = (a: string, b: string) => {
 
   for (let i = aArr.length - 1; i >= 0; i--) {
     if (debt > 0) {
-      if (debt > aArr[i]) {
-        debt -= aArr[i];
-        aArr[i] = 0;
-      } else {
-        aArr[i] -= debt;
-        debt = 0;
-      }
+      aArr[i] -= debt;
+      debt = 0;
     }
     if (bArr[i] > aArr[i]) {
       debt++;

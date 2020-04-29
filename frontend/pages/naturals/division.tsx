@@ -1,14 +1,11 @@
 import React from 'react';
 import { Input } from 'antd';
-import { multiplyNaturals } from '../../modules/multiply_naturals';
+import { divideNaturalsTotal } from '../../modules/divide_naturals_total';
 
-const multiplication = () => {
-  const [firstNumberValue, setFirstNumberValue] = React.useState('36');
-  const [secondNumberValue, setSecondNumberValue] = React.useState('47');
-  const resultNumber = React.useMemo(
-    () => multiplyNaturals(firstNumberValue, secondNumberValue),
-    [firstNumberValue, secondNumberValue]
-  );
+const division = () => {
+  const [firstNumberValue, setFirstNumberValue] = React.useState('');
+  const [secondNumberValue, setSecondNumberValue] = React.useState('');
+  const [resultNumber, setResultNumber] = React.useState('');
   return (
     <div>
       <div>
@@ -18,6 +15,7 @@ const multiplication = () => {
           onChange={(event) => {
             const value = event.target.value.replace(/[^0-9]/g, '');
             setFirstNumberValue(value);
+            setResultNumber(divideNaturalsTotal(value, secondNumberValue));
           }}
         />
       </div>
@@ -29,6 +27,7 @@ const multiplication = () => {
           onChange={(event) => {
             const value = event.target.value.replace(/[^0-9]/g, '');
             setSecondNumberValue(value);
+            setResultNumber(divideNaturalsTotal(firstNumberValue, value));
           }}
         />
       </div>
@@ -40,4 +39,4 @@ const multiplication = () => {
     </div>
   );
 };
-export default multiplication;
+export default division;

@@ -17,6 +17,7 @@ export const multiplyNaturals = (a: string, b: string) => {
     i >= 0;
     i--, numberOfZeros++
   ) {
+    // debugger;
     let zeros = Array(numberOfZeros).fill('0');
     let currentNumber = multiplyNaturalByDigit(aArr.join(''), bArr[i])
       .split('')

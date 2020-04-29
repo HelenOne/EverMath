@@ -10,7 +10,7 @@ export const multiplyNaturalByDigit = (number: string, digit: number) => {
   for (let i = numberArr.length - 1; i >= 0; i--) {
     let currentNumber = (numberArr[i] * digit + buffer) % 10;
     result.unshift(currentNumber);
-    buffer = Math.floor((numberArr[i] * digit - currentNumber) / 10);
+    buffer = Math.floor((numberArr[i] * digit + buffer - currentNumber) / 10);
   }
 
   while (buffer !== 0) {
@@ -20,3 +20,5 @@ export const multiplyNaturalByDigit = (number: string, digit: number) => {
 
   return result.join('');
 };
+
+multiplyNaturalByDigit('36', 7);
