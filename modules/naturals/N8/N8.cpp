@@ -11,7 +11,7 @@ int* MUL_NN_N(int* num1, int* num2, int num1last, int num2last) {
 	int numlast = num1last;
 	int i;
 	int resadd = 0;
-	
+	int k = 0;
 		for (; num2last >= 0;) {
 			i = num1last;
 			bool d = 1;
@@ -26,11 +26,14 @@ int* MUL_NN_N(int* num1, int* num2, int num1last, int num2last) {
 						++numlast;
 						d = 0;
 				}
+			        int c = k;
 				for (; i >= 0;) {
 
-					res[i] = res[i] + num1[i] * num2[num2last];
+					res[numlast - c] = res[numlast - c] + num1[i] * num2[num2last];
 					--i;
+					++c;
 				}
+			        ++k;
 				int reslast = numlast;
 				for (;  reslast >= 0;) {
 					if (reslast >= 1) {
