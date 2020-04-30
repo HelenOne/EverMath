@@ -41,7 +41,7 @@ export const divideNaturalsTotal = (a: string, b: string) => {
         result += '0';
       }
       workingPartExtended = true;
-      if (position + aWorkingPart.length >= a.length) {
+      if (position + initWorkingPart.length + i >= a.length) {
         break;
       }
       debugger;
@@ -60,6 +60,9 @@ export const divideNaturalsTotal = (a: string, b: string) => {
       debugger;
     }
     result += rate.toString();
+    if (aWorkingPart.length === 0) {
+      break;
+    }
     const edgeReached = position + aWorkingPart.length >= a.length;
     debugger;
     let newWorkingPart = subtractNaturals(aWorkingPart, buffer);
