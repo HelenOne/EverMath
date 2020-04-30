@@ -1,15 +1,19 @@
 import React from 'react';
 import { Input } from 'antd';
-import { multiplyNaturals } from '../../modules/naturals/multiply_naturals';
+import { divideIntegersTotal } from '../../modules/integers/divide_integers_total';
+import { divideIntegersMod } from '../../modules/integers/divide_integers_mod';
 
-const multiplication = () => {
+const div = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
   const resultNumber = React.useMemo(
-    () => multiplyNaturals(firstNumberValue, secondNumberValue),
+    () => divideIntegersTotal(firstNumberValue, secondNumberValue),
     [firstNumberValue, secondNumberValue]
   );
-
+  const resultRest = React.useMemo(
+    () => divideIntegersMod(firstNumberValue, secondNumberValue),
+    [firstNumberValue, secondNumberValue]
+  );
   return (
     <div>
       <div>
@@ -17,7 +21,7 @@ const multiplication = () => {
         <Input
           value={firstNumberValue || ''}
           onChange={(event) => {
-            const value = event.target.value.replace(/[^0-9]/g, '');
+            const value = event.target.value.replace(/^(-)|[^0-9]+/g, '$1');
             setFirstNumberValue(value);
           }}
         />
@@ -28,7 +32,7 @@ const multiplication = () => {
         <Input
           value={secondNumberValue || ''}
           onChange={(event) => {
-            const value = event.target.value.replace(/[^0-9]/g, '');
+            const value = event.target.value.replace(/^(-)|[^0-9]+/g, '$1');
             setSecondNumberValue(value);
           }}
         />
@@ -37,8 +41,9 @@ const multiplication = () => {
         <br />
         <span>Результат: </span>
         <Input value={resultNumber || ''} />
+        <span className="rest">Остаток: {resultRest}</span>
       </div>
     </div>
   );
 };
-export default multiplication;
+export default div;

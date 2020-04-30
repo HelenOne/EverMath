@@ -1,15 +1,14 @@
 import React from 'react';
 import { Input } from 'antd';
-import { multiplyNaturals } from '../../modules/naturals/multiply_naturals';
+import { subtrateIntegers } from '../../modules/integers/subtrate_integers';
 
-const multiplication = () => {
+const substraction = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
   const resultNumber = React.useMemo(
-    () => multiplyNaturals(firstNumberValue, secondNumberValue),
+    () => subtrateIntegers(firstNumberValue, secondNumberValue),
     [firstNumberValue, secondNumberValue]
   );
-
   return (
     <div>
       <div>
@@ -17,7 +16,7 @@ const multiplication = () => {
         <Input
           value={firstNumberValue || ''}
           onChange={(event) => {
-            const value = event.target.value.replace(/[^0-9]/g, '');
+            const value = event.target.value.replace(/^(-)|[^0-9]+/g, '$1');
             setFirstNumberValue(value);
           }}
         />
@@ -28,7 +27,7 @@ const multiplication = () => {
         <Input
           value={secondNumberValue || ''}
           onChange={(event) => {
-            const value = event.target.value.replace(/[^0-9]/g, '');
+            const value = event.target.value.replace(/^(-)|[^0-9]+/g, '$1');
             setSecondNumberValue(value);
           }}
         />
@@ -41,4 +40,4 @@ const multiplication = () => {
     </div>
   );
 };
-export default multiplication;
+export default substraction;

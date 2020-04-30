@@ -1,12 +1,14 @@
+//наибольший общий делитель
 import React from 'react';
 import { Input } from 'antd';
-import { multiplyNaturals } from '../../modules/naturals/multiply_naturals';
+import { gcdNaturals } from '../../modules/naturals/gcd_naturals';
 
-const multiplication = () => {
+const gcd = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
+
   const resultNumber = React.useMemo(
-    () => multiplyNaturals(firstNumberValue, secondNumberValue),
+    () => gcdNaturals(firstNumberValue, secondNumberValue),
     [firstNumberValue, secondNumberValue]
   );
 
@@ -41,4 +43,4 @@ const multiplication = () => {
     </div>
   );
 };
-export default multiplication;
+export default gcd;

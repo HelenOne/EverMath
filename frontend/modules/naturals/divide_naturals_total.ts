@@ -10,7 +10,7 @@ export const divideNaturalsTotal = (a: string, b: string) => {
   let aArr;
   let bArr;
 
-  if (compareNaturals(a, b) === 0) {
+  if (compareNaturals(a, b) === 0 && a.length !== 0 && b.length !== 0) {
     return '1';
   } else if (compareNaturals(a, b) === 1) {
     // a < b

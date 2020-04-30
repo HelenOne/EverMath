@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap');
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .info-icon {
@@ -30,4 +30,8 @@ body {
 
 .plus-one-input-number {
   width: 100%;
+}
+.rest {
+  overflow: auto;
+  max-width: 400px;
 }

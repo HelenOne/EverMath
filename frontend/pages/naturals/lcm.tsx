@@ -1,12 +1,14 @@
+//наименьшее общее кратное
 import React from 'react';
 import { Input } from 'antd';
-import { multiplyNaturals } from '../../modules/naturals/multiply_naturals';
+import { lcmNaturals } from '../../modules/naturals/lcm_naturals';
 
-const multiplication = () => {
+const lcm = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
+
   const resultNumber = React.useMemo(
-    () => multiplyNaturals(firstNumberValue, secondNumberValue),
+    () => lcmNaturals(firstNumberValue, secondNumberValue),
     [firstNumberValue, secondNumberValue]
   );
 
@@ -41,4 +43,4 @@ const multiplication = () => {
     </div>
   );
 };
-export default multiplication;
+export default lcm;

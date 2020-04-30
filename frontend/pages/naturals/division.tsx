@@ -1,11 +1,21 @@
 import React from 'react';
 import { Input } from 'antd';
-import { divideNaturalsTotal } from '../../modules/divide_naturals_total';
+import { divideNaturalsTotal } from '../../modules/naturals/divide_naturals_total';
+import { getTheRestOfDivisionNaturals } from '../../modules/naturals/get_the_rest_of_division_naturals';
 
 const division = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
-  const [resultNumber, setResultNumber] = React.useState('');
+
+  const resultNumber = React.useMemo(
+    () => divideNaturalsTotal(firstNumberValue, secondNumberValue),
+    [firstNumberValue, secondNumberValue]
+  );
+  const resultRest = React.useMemo(
+    () => getTheRestOfDivisionNaturals(firstNumberValue, secondNumberValue),
+    [firstNumberValue, secondNumberValue]
+  );
+
   return (
     <div>
       <div>
@@ -15,7 +25,6 @@ const division = () => {
           onChange={(event) => {
             const value = event.target.value.replace(/[^0-9]/g, '');
             setFirstNumberValue(value);
-            setResultNumber(divideNaturalsTotal(value, secondNumberValue));
           }}
         />
       </div>
@@ -27,7 +36,6 @@ const division = () => {
           onChange={(event) => {
             const value = event.target.value.replace(/[^0-9]/g, '');
             setSecondNumberValue(value);
-            setResultNumber(divideNaturalsTotal(firstNumberValue, value));
           }}
         />
       </div>
@@ -35,6 +43,7 @@ const division = () => {
         <br />
         <span>Результат: </span>
         <Input value={resultNumber || ''} />
+        <div className="rest">Остаток: {resultRest}</div>
       </div>
     </div>
   );

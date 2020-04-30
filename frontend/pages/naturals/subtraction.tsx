@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
-import { subtractNaturals } from '../../modules/subtract_naturals';
+import { subtractNaturals } from '../../modules/naturals/subtract_naturals';
 
 const subtraction = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
-import { plusOne } from '../../modules/plus_one';
+import { plusOne } from '../../modules/naturals/plus_one';
 
 const plus_one = () => {
   const [numberValue, setNumberValue] = React.useState('');

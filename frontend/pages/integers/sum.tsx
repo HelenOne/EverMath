@@ -1,12 +1,13 @@
 import React from 'react';
+import { sumIntegers } from '../../modules/integers/sum_integers';
 import { Input } from 'antd';
-import { multiplyNaturals } from '../../modules/naturals/multiply_naturals';
 
-const multiplication = () => {
+const sum = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
+
   const resultNumber = React.useMemo(
-    () => multiplyNaturals(firstNumberValue, secondNumberValue),
+    () => sumIntegers(firstNumberValue, secondNumberValue),
     [firstNumberValue, secondNumberValue]
   );
 
@@ -17,7 +18,7 @@ const multiplication = () => {
         <Input
           value={firstNumberValue || ''}
           onChange={(event) => {
-            const value = event.target.value.replace(/[^0-9]/g, '');
+            const value = event.target.value.replace(/^(-)|[^0-9]+/g, '$1');
             setFirstNumberValue(value);
           }}
         />
@@ -28,7 +29,7 @@ const multiplication = () => {
         <Input
           value={secondNumberValue || ''}
           onChange={(event) => {
-            const value = event.target.value.replace(/[^0-9]/g, '');
+            const value = event.target.value.replace(/^(-)|[^0-9]+/g, '$1');
             setSecondNumberValue(value);
           }}
         />
@@ -41,4 +42,4 @@ const multiplication = () => {
     </div>
   );
 };
-export default multiplication;
+export default sum;

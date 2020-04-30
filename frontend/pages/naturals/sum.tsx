@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
-import { sumNaturals } from '../../modules/sum_naturals';
+import { sumNaturals } from '../../modules/naturals/sum_naturals';
 
 const sum = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');

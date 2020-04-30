@@ -48,12 +48,8 @@
         "path": "/integers/multiplication"
       },
       {
-        "label": "Целая часть от деления",
-        "path": "/integers/div"
-      },
-      {
-        "label": "Остаток от деления",
-        "path": "/integers/mod"
+        "label": "Деление",
+        "path": "/integers/division"
       }
     ]
   },
