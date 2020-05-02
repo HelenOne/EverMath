@@ -40,3 +40,10 @@ body {
   /* justify-content: center; */
   align-items: center;
 }
+.equal {
+  transform: rotate(90deg);
+}
+.operatorIcon {
+  margin-left: 10px;
+  margin-right: 10px;
+}

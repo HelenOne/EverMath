@@ -1,12 +1,12 @@
 import React from 'react';
 import { Input } from 'antd';
-import { subtrateIntegers } from '../../modules/integers/subtrate_integers';
+import { subtractIntegers } from '../../modules/integers/subtract_integers';
 
 const substraction = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
   const resultNumber = React.useMemo(
-    () => subtrateIntegers(firstNumberValue, secondNumberValue),
+    () => subtractIntegers(firstNumberValue, secondNumberValue),
     [firstNumberValue, secondNumberValue]
   );
   return (
