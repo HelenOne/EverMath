@@ -23,9 +23,8 @@ export const divideNaturalsTotal = (a: string, b: string) => {
     return '';
   }
 
-   let result: string = '0'; //неполное частное
-   let sub: string = a;
-   let result: string; 
+   let result: string = '0';
+   let sub: string = a; 
    while(compareNaturals(sub,b) !== 1){
    sub = substr(sub, b);
    result = plusOne(result);
