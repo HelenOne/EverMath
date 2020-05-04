@@ -23,12 +23,12 @@ const division = () => {
       <div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setFirstNumerator(event.target.value)}
+          onChange={(event) => setFirstNumerator(event.target.value.replace(/[^0-9]/g, '')}
         />
         <div className="line"></div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setFirstDenominator(event.target.value)}
+          onChange={(event) => setFirstDenominator(event.target.value.replace(/[^0-9]/g, '')}
         />
       </div>
       <svg
@@ -46,12 +46,12 @@ const division = () => {
       <div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setSecondNumerator(event.target.value)}
+          onChange={(event) => setSecondNumerator(event.target.value.replace(/[^0-9]/g, '')}
         />
         <div className="line"></div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setSecondDenominator(event.target.value)}
+          onChange={(event) => setSecondDenominator(event.target.value.replace(/[^0-9]/g, '')}
         />
       </div>
       <PauseOutlined className="equal operatorIcon" />
