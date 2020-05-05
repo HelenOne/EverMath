@@ -7,7 +7,6 @@ import { divideNaturalsTotal } from './divide_naturals_total';
 
 export const gcdNaturals = (a: string, b: string): string => {
   debugger;
-  console.table({ a, b });
   if (a === '1' || b === '1') {
     return '1';
   }
@@ -23,7 +22,7 @@ export const gcdNaturals = (a: string, b: string): string => {
     a = b;
     b = c;
   }
-  return isEqualZero(a)
+  return isEqualZero(a) || isEqualZero(b)
     ? b
     : gcdNaturals(getTheRestOfDivisionNaturals(b, a), b);
 };

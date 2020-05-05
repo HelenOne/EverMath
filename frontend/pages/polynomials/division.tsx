@@ -1,7 +1,8 @@
 import React from 'react';
 import { PolynomialView } from '../../components/Polynomial';
 import { Polynomial } from '../../modules/polynomials/sum_polynomials';
-import { dividePolynomialsTotalRest } from '../../modules/polynomials/divide_polynomials_total_rest';
+import { dividePolynomialsTotal } from '../../modules/polynomials/divide_polynomials_total';
+import { getRestPolynomials } from '../../modules/polynomials/get_rest_polynomials';
 
 const division = () => {
   const [polynomial1, setPolynomial1] = React.useState<Polynomial>([
@@ -25,8 +26,12 @@ const division = () => {
     },
   ]);
 
-  const result = React.useMemo(
-    () => dividePolynomialsTotalRest(polynomial1, polynomial2),
+  const resultTotal = React.useMemo(
+    () => dividePolynomialsTotal(polynomial1, polynomial2),
+    [polynomial1, polynomial2]
+  );
+  const resultRest = React.useMemo(
+    () => getRestPolynomials(polynomial1, polynomial2),
     [polynomial1, polynomial2]
   );
 
@@ -39,9 +44,9 @@ const division = () => {
       <PolynomialView value={polynomial2} onChange={setPolynomial2} />
       <br />
       <label className="polynomial-label">Результат:</label>
-      <PolynomialView value={result.total} />
+      <PolynomialView value={resultTotal} />
       <label className="polynomial-label">Остаток:</label>
-      <PolynomialView value={result.rest} />
+      <PolynomialView value={resultRest} />
     </div>
   );
 };

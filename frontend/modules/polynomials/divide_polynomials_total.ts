@@ -8,26 +8,91 @@ import { subtractRationals } from '../rational/subtract_rationals';
 import { subtractPolynomials } from './subtract_polynomials';
 import { multiplyPolynomials } from './multiply_polynomials';
 
-export const dividePolynomialsTotalRest = (
+export const dividePolynomialsTotal = (
   polynomial1: Polynomial,
   polynomial2: Polynomial
 ) => {
   if (!polynomial1 || !polynomial2) {
-    return {
-      total: [{ numerator: '', denominator: '' }],
-      rest: [{ numerator: '', denominator: '' }],
-    };
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
+  }
+  if (
+    polynomial1.some((el) => {
+      return !el.numerator || !el.denominator;
+    })
+  ) {
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
+  }
+  if (
+    polynomial2.some((el) => {
+      return !el.numerator || !el.denominator;
+    })
+  ) {
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
+  }
+  if (
+    polynomial1.some((el) => {
+      return el.numerator === '' || el.denominator === '';
+    })
+  ) {
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
+  }
+  if (
+    polynomial2.some((el) => {
+      return el.numerator === '' || el.denominator === '';
+    })
+  ) {
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
   }
   if (
     polynomial1.every((el) => {
       return el.numerator === '' || el.denominator === '';
     })
   ) {
-    return {
-      total: [{ numerator: '', denominator: '' }],
-      rest: [{ numerator: '', denominator: '' }],
-    };
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
   }
+  if (
+    polynomial2.every((el) => {
+      return el.numerator === '' || el.denominator === '';
+    })
+  ) {
+    return [
+      {
+        numerator: '',
+        denominator: '',
+      },
+    ];
+  }
+  debugger;
   let dividend: Polynomial;
   let divisor: Polynomial;
   if (checkDegree(polynomial1) >= checkDegree(polynomial2)) {
@@ -46,7 +111,8 @@ export const dividePolynomialsTotalRest = (
       dividend,
       multiplyPolynomials([result[i]], divisor)
     );
+    debugger;
     i++;
   }
-  return { total: result, rest: dividend };
+  return result.reverse();
 };

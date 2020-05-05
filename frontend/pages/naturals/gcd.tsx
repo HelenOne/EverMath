@@ -8,15 +8,9 @@ const gcd = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
 
-  const [resultNumber, computing] = React.useMemo(() => {
-    console.log('useDebouncedMemo called');
+  const resultNumber = React.useMemo(() => {
     return gcdNaturals(firstNumberValue, secondNumberValue);
   }, [firstNumberValue, secondNumberValue]);
-
-  // const resultNumber = React.useMemo(
-  //   () => gcdNaturals(firstNumberValue, secondNumberValue),
-  //   [firstNumberValue, secondNumberValue]
-  // );
 
   return (
     <div>
@@ -45,6 +39,7 @@ const gcd = () => {
         <br />
         <span>Результат: </span>
         <Input value={resultNumber || ''} />
+        {console.log(resultNumber)}
       </div>
     </div>
   );
