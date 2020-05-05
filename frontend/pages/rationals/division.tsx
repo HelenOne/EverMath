@@ -23,12 +23,26 @@ const division = () => {
       <div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setFirstNumerator(event.target.value)}
+          onChange={(event) =>
+            setFirstNumerator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0{2,}/g, '0')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
         <div className="line"></div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setFirstDenominator(event.target.value)}
+          onChange={(event) =>
+            setFirstDenominator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0/g, '')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
       </div>
       <svg
@@ -46,12 +60,26 @@ const division = () => {
       <div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setSecondNumerator(event.target.value)}
+          onChange={(event) =>
+            setSecondNumerator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0{2,}/g, '0')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
         <div className="line"></div>
         <Input
           className="operatorIcon"
-          onChange={(event) => setSecondDenominator(event.target.value)}
+          onChange={(event) =>
+            setSecondDenominator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0/g, '')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
       </div>
       <PauseOutlined className="equal operatorIcon" />

@@ -47,7 +47,10 @@ export const PolynomialView: React.FC<{
                 <Input
                   value={monomial.numerator}
                   onChange={(event) => {
-                    const inputValue = event.target.value;
+                    const inputValue = event.target.value
+                      .replace(/[^0-9\-]/g, '')
+                      .replace(/^0{2,}/g, '0')
+                      .replace(/([0-9\-])-/g, '$1');
                     const newValue = [...value];
                     newValue[degree].numerator = inputValue;
                     onChange ? onChange(newValue) : null;
@@ -56,7 +59,10 @@ export const PolynomialView: React.FC<{
                 <Input
                   value={monomial.denominator}
                   onChange={(event) => {
-                    const inputValue = event.target.value;
+                    const inputValue = event.target.value
+                      .replace(/[^0-9\-]/g, '')
+                      .replace(/^0/g, '')
+                      .replace(/([0-9\-])-/g, '$1');
                     const newValue = [...value];
                     newValue[degree].denominator = inputValue;
                     onChange ? onChange(newValue) : null;
