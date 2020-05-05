@@ -23,24 +23,52 @@ const sum = () => {
       <div>
         <Input
           value={firstNumerator || ''}
-          onChange={(event) => setFirstNumerator(event.target.value)}
+          onChange={(event) =>
+            setFirstNumerator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0{2,}/g, '0')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
         <div className="line"></div>
         <Input
           value={firstDenominator || ''}
-          onChange={(event) => setFirstDenominator(event.target.value)}
+          onChange={(event) =>
+            setFirstDenominator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0/g, '')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
       </div>
       <PlusOutlined className="operatorIcon" />
       <div>
         <Input
           value={secondNumerator || ''}
-          onChange={(event) => setSecondNumerator(event.target.value)}
+          onChange={(event) =>
+            setSecondNumerator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0{2,}/g, '0')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
         <div className="line"></div>
         <Input
           value={secondDenominator || ''}
-          onChange={(event) => setSecondDenominator(event.target.value)}
+          onChange={(event) =>
+            setSecondDenominator(
+              event.target.value
+                .replace(/[^0-9\-]/g, '')
+                .replace(/^0/g, '')
+                .replace(/([0-9\-])-/g, '$1')
+            )
+          }
         />
       </div>
       <PauseOutlined className="equal operatorIcon" />

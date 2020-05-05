@@ -15,20 +15,22 @@ export const reduceRational = ({
   denominator: string;
 }) => {
   if (
-    !isEqualZero(absInteger(denominator)) &&
-    !isEqualZero(absInteger(numerator))
+    (isEqualZero(absInteger(denominator)) &&
+      isEqualZero(absInteger(numerator))) ||
+    isEqualZero(absInteger(numerator))
   ) {
-    let resultIsPositive = true;
-    if (isPositive(numerator) !== isPositive(denominator)) {
-      resultIsPositive = false;
-    }
-    const gcd = gcdNaturals(numerator, denominator);
-    numerator = divideNaturalsTotal(absInteger(numerator), gcd);
-    denominator = divideNaturalsTotal(absInteger(denominator), gcd);
+    return { numerator: '0', denominator: '0' };
+  }
+  let resultIsPositive = true;
+  if (isPositive(numerator) !== isPositive(denominator)) {
+    resultIsPositive = false;
+  }
+  const gcd = gcdNaturals(absInteger(numerator), absInteger(denominator));
+  numerator = divideNaturalsTotal(absInteger(numerator), gcd);
+  denominator = divideNaturalsTotal(absInteger(denominator), gcd);
 
-    if (!resultIsPositive) {
-      numerator = changeSign(numerator);
-    }
-    return { numerator, denominator };
-  } else return { numerator: '0', denominator: '0' };
+  if (!resultIsPositive) {
+    numerator = changeSign(numerator);
+  }
+  return { numerator, denominator };
 };

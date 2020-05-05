@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "dependencies": {
+    "@types/jest": "^25.2.1",
     "antd": "^4.1.4",
     "next": "9.3.5",
     "react": "16.13.1",
@@ -16,6 +18,7 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "@types/node": "^13.13.4"
+    "@types/node": "^13.13.4",
+    "jest": "^26.0.1"
   }
 }
