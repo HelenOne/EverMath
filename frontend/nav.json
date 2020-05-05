@@ -3,10 +3,6 @@
     "label": "Натуральные числа",
     "items": [
       {
-        "label": "Прибавление 1",
-        "path": "/naturals/plus_one"
-      },
-      {
         "label": "Сложение",
         "path": "/naturals/sum"
       },
@@ -90,24 +86,8 @@
         "path": "/polynomials/multiplication"
       },
       {
-        "label": "Вынесение НОК знаменателя",
-        "path": "/polynomials/lcm"
-      },
-      {
-        "label": "НОД",
-        "path": "/polynomials/gcd"
-      },
-      {
-        "label": "Выделение целой части",
-        "path": "/polynomials/div"
-      },
-      {
-        "label": "Остаток от деления",
-        "path": "/polynomials/mod"
-      },
-      {
-        "label": "Преобразование - кратные корни в простые",
-        "path": "/polynomials/transformation"
+        "label": "Деление",
+        "path": "/polynomials/division"
       }
     ]
   }

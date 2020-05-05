@@ -9,6 +9,7 @@ body {
   right: 30px;
   bottom: 20px;
   font-size: 20px;
+  z-index: 1;
 }
 .info-icon:hover {
   cursor: pointer;
@@ -46,4 +47,36 @@ body {
 .operatorIcon {
   margin-left: 10px;
   margin-right: 10px;
+}
+.polynomial {
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  width: 700px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+}
+.read-only-polynomial {
+  margin-left: 50px;
+}
+.polynomial-label {
+  margin-left: 50px;
+}
+.monomial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+}
+.monomial-variable {
+  font-size: 20px;
+  margin-left: 5px;
+  /* margin-right: 5px; */
+}
+.add-monomial {
+  margin-right: 20px;
 }

@@ -52,7 +52,7 @@
     "hint": "Тут можно сложить два рациональных числа - две конечные дроби"
   },
   "/rationals/subtraction": {
-    "label": "Разница конечных дробей",
+    "label": "Разность конечных дробей",
     "hint": "Тут можно вычесть два рациональных числа - две конечные дроби"
   },
   "/rationals/multiplication": {
@@ -62,5 +62,17 @@
   "/rationals/division": {
     "label": "Деление дробей",
     "hint": ":)"
+  },
+  "/polynomials/sum": {
+    "label": "Сумма многочленов",
+    "hint": "Кусь"
+  },
+  "/polynomials/subtraction": {
+    "label": "Разность многочленов",
+    "hint": "Кусь"
+  },
+  "/polynomials/multiplication": {
+    "label": "Произведение многочленов",
+    "hint": "Кусь"
   }
 }
