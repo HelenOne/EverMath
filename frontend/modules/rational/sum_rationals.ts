@@ -20,9 +20,6 @@ export const sumRationals = (
   if (!numerator1 || !numerator2 || !denominator1 || !denominator2) {
     return { numerator: '', denominator: '' };
   }
-  // if (!numerator1 || !numerator2 || !denominator1 || !denominator2) {
-  //   return { numerator: '', denominator: '' };
-  // }
   let {
     numerator: numeratorReduced1,
     denominator: denominatorReduced1,
