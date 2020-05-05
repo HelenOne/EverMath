@@ -3,6 +3,7 @@
 import { isEqualZero } from './is_equal_zero';
 import { getTheRestOfDivisionNaturals } from './get_the_rest_of_division_naturals';
 import { compareNaturals } from './compare_naturals';
+import { divideNaturalsTotal } from './divide_naturals_total';
 
 export const gcdNaturals = (a: string, b: string): string => {
   debugger;
@@ -16,13 +17,13 @@ export const gcdNaturals = (a: string, b: string): string => {
   if (!a || !b) {
     return '';
   }
-  // if (compareNaturals(a, b) === 1) {
-  //   // if b > a
-  //   let c = a;
-  //   a = b;
-  //   b = a;
-  // }
+  if (compareNaturals(a, b) === 1 && !isEqualZero(a)) {
+    // if b > a
+    let c = a;
+    a = b;
+    b = c;
+  }
   return isEqualZero(a)
     ? b
-    : gcdNaturals(getTheRestOfDivisionNaturals(b, a), a);
+    : gcdNaturals(getTheRestOfDivisionNaturals(b, a), b);
 };
