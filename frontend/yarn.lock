@@ -1255,6 +1255,13 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@sevenoutman/use-debounced-memo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sevenoutman/use-debounced-memo/-/use-debounced-memo-1.0.0.tgz#1df884fa47b03b5f9f71dfbaba479f0d68f18f0d"
+  integrity sha512-TQ5Jw21WybUkX4+S3ibLMw2uLp8x4QmvTkmkijlZCYPC+6whgTLwLHVx19TGAvVaCTY4nNO3kAhKhtw7WX0jeQ==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
 "@sinonjs/commons@^1.7.0":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.7.2.tgz#505f55c74e0272b43f6c52d81946bed7058fc0e2"
@@ -4853,6 +4860,11 @@ locate-path@^5.0.0:
   integrity sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
   dependencies:
     p-locate "^4.1.0"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
