@@ -2,21 +2,16 @@
 import React from 'react';
 import { Input } from 'antd';
 import { gcdNaturals } from '../../modules/naturals/gcd_naturals';
-import useDebouncedMemo from '@sevenoutman/use-debounced-memo';
 import { useMemoDebounced } from '../../debounce';
 
 const gcd = () => {
   const [firstNumberValue, setFirstNumberValue] = React.useState('');
   const [secondNumberValue, setSecondNumberValue] = React.useState('');
 
-  const [resultNumber, computing] = useMemoDebounced(
-    () => {
-      console.log('useDebouncedMemo called');
-      return gcdNaturals(firstNumberValue, secondNumberValue);
-    },
-    [firstNumberValue, secondNumberValue],
-    700
-  );
+  const [resultNumber, computing] = React.useMemo(() => {
+    console.log('useDebouncedMemo called');
+    return gcdNaturals(firstNumberValue, secondNumberValue);
+  }, [firstNumberValue, secondNumberValue]);
 
   // const resultNumber = React.useMemo(
   //   () => gcdNaturals(firstNumberValue, secondNumberValue),
@@ -49,7 +44,7 @@ const gcd = () => {
       <div>
         <br />
         <span>Результат: </span>
-        <Input value={resultNumber || ''} disabled={computing} />
+        <Input value={resultNumber || ''} />
       </div>
     </div>
   );
