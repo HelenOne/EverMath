@@ -74,5 +74,9 @@
   "/polynomials/multiplication": {
     "label": "Произведение многочленов",
     "hint": "Кусь"
+  },
+  "/polynomials/division": {
+    "label": "Деление многочленов с остатком",
+    "hint": "Кусь"
   }
 }

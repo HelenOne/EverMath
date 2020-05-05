@@ -40,7 +40,6 @@ const division = () => {
       <br />
       <label className="polynomial-label">Результат:</label>
       <PolynomialView value={result.total} />
-      <br />
       <label className="polynomial-label">Остаток:</label>
       <PolynomialView value={result.rest} />
     </div>

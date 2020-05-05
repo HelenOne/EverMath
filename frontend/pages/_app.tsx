@@ -1,16 +1,16 @@
-import { Menu, Card } from "antd";
-import { Tooltip } from "antd";
-import "../styles/app.css";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import nav from "../nav.json";
-import pagesInfo from "../pages-info.json";
+import { Menu, Card } from 'antd';
+import { Tooltip } from 'antd';
+import '../styles/app.css';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import nav from '../nav.json';
+import pagesInfo from '../pages-info.json';
 
-import { QuestionCircleOutlined } from "@ant-design/icons";
+import { QuestionCircleOutlined } from '@ant-design/icons';
 const { SubMenu } = Menu;
-import stylesheet from "antd/dist/antd.min.css";
+import stylesheet from 'antd/dist/antd.min.css';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: any) {
   const router = useRouter();
   console.log(router);
 
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         className="nav-menu"
         style={{ width: 256 }}
         selectedKeys={[router.pathname]}
-        defaultOpenKeys={[1]}
+        defaultOpenKeys={['1']}
         mode="inline"
       >
         {nav.map((elem, index) => {
@@ -44,18 +44,22 @@ function MyApp({ Component, pageProps }) {
       <Tooltip
         className="info-icon"
         title={
-          (router.pathname in pagesInfo && pagesInfo[router.pathname].hint) ||
-          "Meow"
+          (router.pathname in pagesInfo &&
+            (pagesInfo as any)[router.pathname].hint) ||
+          'Meow'
         }
       >
-        <QuestionCircleOutlined /> Справка
+        <>
+          <QuestionCircleOutlined /> Справка
+        </>
       </Tooltip>
 
       <div className="content">
         <Card
           style={{ minWidth: 300 }}
           title={
-            router.pathname in pagesInfo && pagesInfo[router.pathname].label
+            router.pathname in pagesInfo &&
+            (pagesInfo as any)[router.pathname].label
           }
         >
           <Component {...pageProps} />
