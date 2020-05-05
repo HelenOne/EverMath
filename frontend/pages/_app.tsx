@@ -49,9 +49,9 @@ function MyApp({ Component, pageProps }: any) {
           'Meow'
         }
       >
-        <>
+        <div>
           <QuestionCircleOutlined /> Справка
-        </>
+        </div>
       </Tooltip>
 
       <div className="content">
