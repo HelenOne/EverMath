@@ -92,7 +92,6 @@ export const dividePolynomialsTotal = (
       },
     ];
   }
-  debugger;
   let dividend: Polynomial;
   let divisor: Polynomial;
   if (checkDegree(polynomial1) >= checkDegree(polynomial2)) {
@@ -105,8 +104,9 @@ export const dividePolynomialsTotal = (
   let result: Polynomial = [];
   let buffer: Monomial;
   let i = 0;
-  while (checkDegree(dividend) >= checkDegree(divisor)) {
-    result.push(divideRationals(dividend[i], divisor[i]));
+  debugger;
+  while (checkDegree(dividend) >= checkDegree(divisor) && i < dividend.length) {
+    result.push(divideRationals(dividend[0], divisor[i]));
     dividend = subtractPolynomials(
       dividend,
       multiplyPolynomials([result[i]], divisor)

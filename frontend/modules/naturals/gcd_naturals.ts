@@ -6,7 +6,6 @@ import { compareNaturals } from './compare_naturals';
 import { divideNaturalsTotal } from './divide_naturals_total';
 
 export const gcdNaturals = (a: string, b: string): string => {
-  debugger;
   if (a === '1' || b === '1') {
     return '1';
   }

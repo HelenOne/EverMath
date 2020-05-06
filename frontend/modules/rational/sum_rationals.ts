@@ -13,10 +13,12 @@ export type Fraction = {
   denominator: string;
 };
 
-export const sumRationals = (
-  { numerator: numerator1, denominator: denominator1 }: Fraction,
-  { numerator: numerator2, denominator: denominator2 }: Fraction
-) => {
+export const sumRationals = (fraction1: Fraction, fraction2: Fraction) => {
+  if (!fraction1 || !fraction2) {
+    return { numerator: '', denominator: '' };
+  }
+  const { numerator: numerator1, denominator: denominator1 } = fraction1;
+  const { numerator: numerator2, denominator: denominator2 } = fraction2;
   if (!numerator1 || !numerator2 || !denominator1 || !denominator2) {
     return { numerator: '', denominator: '' };
   }

@@ -90,16 +90,19 @@ export const getRestPolynomials = (
       },
     ];
   }
+
   let dividend: Polynomial;
   let divisor: Polynomial;
   if (checkDegree(polynomial1) >= checkDegree(polynomial2)) {
-    dividend = polynomial1.map((el) => ({ ...el })).reverse();
-    divisor = polynomial2.map((el) => ({ ...el })).reverse();
+    dividend = polynomial1.map((el) => ({ ...el }));
+    divisor = polynomial2.map((el) => ({ ...el }));
   } else {
-    dividend = polynomial2.map((el) => ({ ...el })).reverse();
-    divisor = polynomial1.map((el) => ({ ...el })).reverse();
+    dividend = polynomial2.map((el) => ({ ...el }));
+    divisor = polynomial1.map((el) => ({ ...el }));
   }
+  debugger;
   let divideTotal = dividePolynomialsTotal(dividend, divisor);
   let resultSupposed = multiplyPolynomials(divideTotal, divisor);
-  return subtractPolynomials(dividend, resultSupposed);
+  let result = subtractPolynomials(dividend, resultSupposed);
+  return result;
 };
