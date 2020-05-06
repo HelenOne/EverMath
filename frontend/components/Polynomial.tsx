@@ -36,12 +36,24 @@ export const PolynomialView: React.FC<{
         .map((monomial, degree) => ({
           monomial,
           degree,
-          hasNext: Boolean(value[degree + 1]),
+          hasNext:
+            value[degree + 1] &&
+            value[degree + 1].numerator !== '0' &&
+            value[degree + 1].denominator !== '0'
+              ? Boolean(value[degree + 1])
+              : false,
         }))
         .reverse()
         .map(({ monomial, degree, hasNext }) => {
           return (
-            <div className="monomial" key={degree}>
+            <div
+              className={
+                !onChange && monomial.numerator === '0'
+                  ? 'monomial zeroFraction'
+                  : 'monomial'
+              }
+              key={degree}
+            >
               {hasNext ? <PlusOutlined className="operatorIcon" /> : null}
               <div className="fraction">
                 <Input

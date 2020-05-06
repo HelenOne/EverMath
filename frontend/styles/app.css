@@ -89,3 +89,6 @@ body {
 .statistic-paragraph:nth-child(2) {
   margin-top: 60px;
 }
+.zeroFraction {
+  display: none;
+}
