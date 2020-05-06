@@ -25,19 +25,29 @@ function MyApp({ Component, pageProps }: any) {
         mode="inline"
       >
         {nav.map((elem, index) => {
-          return (
-            <SubMenu key={index} title={<span>{elem.label}</span>}>
-              {elem.items.map((elem) => {
-                return (
-                  <Menu.Item key={elem.path}>
-                    <Link href={elem.path}>
-                      <a>{elem.label}</a>
-                    </Link>
-                  </Menu.Item>
-                );
-              })}
-            </SubMenu>
-          );
+          if (elem.items) {
+            return (
+              <SubMenu key={index} title={<span>{elem.label}</span>}>
+                {elem.items.map((elem) => {
+                  return (
+                    <Menu.Item key={elem.path}>
+                      <Link href={elem.path}>
+                        <a>{elem.label}</a>
+                      </Link>
+                    </Menu.Item>
+                  );
+                })}
+              </SubMenu>
+            );
+          } else {
+            return (
+              <Menu.Item key={elem.path}>
+                <Link href={elem.path}>
+                  <a>{elem.label}</a>
+                </Link>
+              </Menu.Item>
+            );
+          }
         })}
       </Menu>
 

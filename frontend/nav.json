@@ -90,5 +90,9 @@
         "path": "/polynomials/division"
       }
     ]
+  },
+  {
+    "label": "Статистика",
+    "path": "/statistics"
   }
 ]

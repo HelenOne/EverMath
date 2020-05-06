@@ -80,3 +80,12 @@ body {
 .add-monomial {
   margin-right: 20px;
 }
+.statistic-wrapper {
+  display: flex;
+}
+.statistic-half-wrapper:nth-child(2) {
+  margin-left: 60px;
+}
+.statistic-paragraph:nth-child(2) {
+  margin-top: 60px;
+}
