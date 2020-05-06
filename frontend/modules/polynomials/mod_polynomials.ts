@@ -5,7 +5,7 @@ import { Polynomial } from './sum_polynomials';
 import { subtractPolynomials } from './subtract_polynomials';
 import { checkDegree } from './check_degree';
 import { multiplyPolynomials } from './multiply_polynomials';
-import { dividePolynomialsTotalRest } from './divide_polynomials_total_rest';
+import { dividePolynomialsTotal } from './divide_polynomials_total';
 
 export const modPolynomials = (
   polynomial1: Polynomial,
@@ -27,5 +27,5 @@ export const modPolynomials = (
   //     dividePolynomialsTotal(dividend, divisor).total
   //   )
   // );
-  return dividePolynomialsTotalRest(dividend, divisor).rest;
+  return dividePolynomialsTotal(dividend, divisor);
 };
