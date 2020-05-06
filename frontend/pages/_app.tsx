@@ -12,7 +12,6 @@ import stylesheet from 'antd/dist/antd.min.css';
 
 function MyApp({ Component, pageProps }: any) {
   const router = useRouter();
-  console.log(router);
 
   return (
     <div className="main-container">
