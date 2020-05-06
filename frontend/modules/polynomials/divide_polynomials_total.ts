@@ -7,6 +7,7 @@ import { divideRationals } from '../rational/divide_rationals';
 import { subtractRationals } from '../rational/subtract_rationals';
 import { subtractPolynomials } from './subtract_polynomials';
 import { multiplyPolynomials } from './multiply_polynomials';
+import { isEqualZero } from '../naturals/is_equal_zero';
 
 export const dividePolynomialsTotal = (
   polynomial1: Polynomial,
@@ -105,13 +106,22 @@ export const dividePolynomialsTotal = (
   let buffer: Monomial;
   let i = 0;
   debugger;
-  while (checkDegree(dividend) >= checkDegree(divisor) && i < dividend.length) {
-    result.push(divideRationals(dividend[0], divisor[i]));
-    dividend = subtractPolynomials(
-      dividend,
-      multiplyPolynomials([result[i]], divisor)
-    );
-    debugger;
+  while (
+    checkDegree(dividend) >= checkDegree(divisor) &&
+    i <= dividend.length
+  ) {
+    const x = divideRationals(dividend[0], divisor[0]);
+    result.push(x);
+    // const dividendReversed = dividend.map((el) => ({ ...el })).reverse();
+    const divisorReversed = divisor.map((el) => ({ ...el })).reverse();
+    const toBeSubstructed = multiplyPolynomials([x], divisorReversed).reverse();
+    while (toBeSubstructed.length < dividend.length) {
+      toBeSubstructed.push({ numerator: '0', denominator: '0' });
+    }
+    dividend = subtractPolynomials(dividend, toBeSubstructed);
+    while (dividend[0] && isEqualZero(dividend[0].numerator)) {
+      dividend.shift();
+    }
     i++;
   }
   return result.reverse();
