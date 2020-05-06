@@ -4,9 +4,12 @@ import { isPositive } from './isPositive';
 import { changeSign } from './change_sign';
 import { divideNaturalsTotal } from '../naturals/divide_naturals_total';
 import { absInteger } from './abs_integer';
+import { plusOne } from '../naturals/plus_one';
 
 export const divideIntegersTotal = (a: string, b: string) => {
   if (isPositive(a) !== isPositive(b)) {
-    return changeSign(divideNaturalsTotal(absInteger(a), absInteger(b)));
+    return changeSign(
+      plusOne(divideNaturalsTotal(absInteger(a), absInteger(b)))
+    );
   } else return divideNaturalsTotal(absInteger(a), absInteger(b));
 };
