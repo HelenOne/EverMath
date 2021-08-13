@@ -12,7 +12,7 @@
     "@sevenoutman/use-debounced-memo": "^1.0.0",
     "@types/jest": "^25.2.1",
     "antd": "^4.1.4",
-    "next": "9.3.5",
+    "next": "11.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-mathlive": "^2.0.4",
